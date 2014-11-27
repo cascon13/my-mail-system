@@ -38,6 +38,10 @@ public class MailItem
     {
         return message;
     }
+    public String getSubject()
+    {
+        return subject;
+    }
     
     public void print()
     {
