@@ -14,10 +14,10 @@ public class MailClient
     /**
      * Constructor for objects of class MailClient
      */
-    public MailClient(MailServer newServer, String newUser)
+    public MailClient(MailServer server, String user)
     {
-       server = newServer;
-       user = newUser;
+       this.server = server;
+       this.user = user;
     }
 
     public MailItem getNextMailItem()
@@ -40,9 +40,9 @@ public class MailClient
         
         
     }
-    public void sendMailItem( String who, String message)
+    public void sendMailItem( String who, String message, String subject)
     {
-        MailItem email = new MailItem (user, who, message);
+        MailItem email = new MailItem (user, who, message, subject);
         server.post(email);
     }
     
